@@ -19,7 +19,7 @@ const combinedSchema = a.combine([schema, sqlSchema]);
 export type Schema = ClientSchema<typeof combinedSchema>;
 
 export const data = defineData({
-  schema,
+  schema: combinedSchema,
   authorizationModes: {
     defaultAuthorizationMode: 'iam',
   },
