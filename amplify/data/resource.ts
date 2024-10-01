@@ -7,7 +7,9 @@ const sqlSchema = generatedSqlSchema.authorization(allow => allow.guest())
 const schema = a.schema({
   Todo: a
     .model({
+      id: a.id().required(),
       content: a.string(),
+      date: a.string(),
     })
     .authorization((allow) => [allow.guest()]),
 });
@@ -22,6 +24,4 @@ export const data = defineData({
     defaultAuthorizationMode: 'iam',
   },
 });
-
-
 
