@@ -32,6 +32,7 @@ export const schema = configure({
     "User": a.model({
         id: a.integer().required(),
         name: a.string(),
+        blog: a.string().required(),
         gender: a.enum([
             "MALE",
             "FEMALE",
