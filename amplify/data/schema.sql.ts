@@ -29,35 +29,13 @@ export const schema = configure({
         }
     }
 }).schema({
-    "User": a.model({
-        id: a.integer().required(),
+    Person: a.model({
+        id: a.id(),
         name: a.string(),
-        blog: a.string().required(),
-        gender: a.enum([
-            "MALE",
-            "FEMALE",
-            "NA"
-        ]),
-        age: a.enum([
-            "Above18",
-            "Below18"
-        ])
-    }).identifier([
-        "id"
-    ]),
-    "User1": a.model({
-        id: a.integer().required(),
-        name: a.string(),
-        gender: a.enum([
-            "MALE",
-            "FEMALE",
-            "NA"
-        ]),
-        age: a.enum([
-            "Above18",
-            "Below18"
-        ])
-    }).identifier([
-        "id"
+        age: a.ref("age")
+    }),
+    age: a.enum([
+        "A",
+        "B"
     ])
 });
